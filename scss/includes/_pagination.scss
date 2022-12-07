@@ -1,0 +1,94 @@
+.new-pagination {
+	@include flex;
+	@include align-items(center);
+	@include justify-content(center);
+	margin: 26px 0 0;
+	padding: 0;
+	list-style: none;
+
+	@media (max-width: 1199px) {
+		margin: 20px 0 0;
+	}
+
+	@media (max-width: 767px) {
+		margin: 4px 0 0;
+	}
+
+	&__li {
+		@include flex;
+		margin: 0 15px;
+
+		@media (max-width: 767px) {
+			margin: 0 14px;
+		}
+
+		&._prev {
+			margin-right: 26px;
+			margin-left: 0;
+
+			@media (max-width: 767px) {
+				margin-right: 14px;
+			}
+		}
+
+		&._next {
+			margin-left: 26px;
+			margin-right: 0;
+			@include transform(rotate(180deg));
+
+			@media (max-width: 767px) {
+				margin-left: 14px;
+			}
+		}
+	}
+
+	&__item {
+		color: $color_red;
+		text-decoration: none;
+		font-size: .87rem;
+
+		@media (max-width: 1399px) {
+			font-size: 1rem;
+		}
+
+		&:hover {
+			color: $color_red;
+			text-decoration: underline;
+		}
+
+		&._active {
+			color: $color_lightBlack;
+		}
+
+		&._button {
+			width: 30px;
+			height: 30px;
+			@include border-radius(2px);
+			border: 1px solid $color_lightBlack;
+			@include flex;
+			@include align-items(center);
+			@include justify-content(center);
+
+			&:hover {
+				border: 1px solid $color_red;
+
+				&::before {
+					border-left: 1px solid $color_red;
+					border-bottom: 1px solid $color_red;
+				}
+			}
+
+			&::before {
+				content: '';
+				width: 10px;
+				height: 10px;
+				border-left: 1px solid $color_lightBlack;
+				border-bottom: 1px solid $color_lightBlack;
+				@include transform(rotate(45deg));
+				@include transition($transition);
+				position: relative;
+				left: 2px;
+			}
+		}
+	}
+}

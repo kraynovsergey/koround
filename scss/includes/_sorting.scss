@@ -1,0 +1,125 @@
+.new-sorting {
+	padding: 18px 0;
+	border-top: 1px solid $color_darkGray;
+	border-bottom: 1px solid $color_darkGray;
+	margin-bottom: 24px;
+
+	&__cols {
+		@include flex;
+		@include flex-wrap(wrap);
+		@include align-items(center);
+
+		@media (max-width: 1199px) {
+			@include align-items(flex-end);
+		}
+	}
+
+	&__col {
+		@include flex;
+		@include flex-wrap(wrap);
+		@include align-items(center);
+
+		&._left {
+			@include justify-content(space-between);
+			width: calc(100% - 116px);
+
+			@media (max-width: 991px) {
+				@include flex-direction(column);
+				@include align-items(flex-start);
+			}
+		}
+
+		&._right {
+			min-width: 64px;
+			max-width: 64px;
+			margin-left: 52px;
+			@include flex;
+			@include flex-wrap(wrap);
+			@include align-items(center);
+			@include justify-content(flex-end);
+		}
+	}
+
+	&__block {
+		@include flex;
+		@include flex-wrap(wrap);
+		@include align-items(center);
+		font-size: .81rem;
+		font-weight: 500;
+
+		@media (max-width: 1199px) {
+			font-size: .9rem;
+		}
+
+		@media (max-width: 991px) {
+			margin-bottom: 15px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		@media (max-width: 767px) {
+			@include flex-direction(column);
+			@include align-items(flex-start);
+		}
+	}
+
+	&__values {
+		@include flex;
+		@include align-items(center);
+	}
+
+	&__value {
+		@include flex;
+		@include align-items(center);
+		margin-left: 24px;
+		color: $color_lightBlack;
+		font-weight: 500;
+		text-decoration: none;
+
+		@media (max-width: 767px) {
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+
+		&:hover {
+			color: $color_lightBlack;
+		}
+
+		&._active {
+			color: $color_red;
+
+			& svg {
+				display: inline-block;
+			}
+		}
+
+		&._desc {
+			& svg {
+				@include transform(rotate(-180deg));
+			}
+		}
+
+		& svg {
+			margin-left: 4px;
+			display: none;
+		}
+	}
+
+	&__view {
+		margin-right: 20px;
+		text-decoration: none;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&._active {
+			& svg rect {
+				stroke: $color_red;
+			}
+		}
+	}
+}

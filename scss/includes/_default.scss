@@ -1,0 +1,109 @@
+html {
+	font-size: 16px;
+
+	@media (max-width: 1399px) {
+		font-size: 14px;
+	}
+}
+
+body {
+	background: $color_white;
+	font-family: 'Roboto';
+	color: $color_black;
+	font-weight: normal;
+	font-style: normal;
+
+	&._main {
+		@include flex;
+		@include flex-direction(column);
+	}
+}
+
+body * {
+  outline: none !important;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+a,
+svg,
+path,
+rect,
+circle,
+button {
+	@include transition($transition);
+}
+
+button {
+	@include border-radius(0);
+	@include transition($transition);
+	-webkit-appearance: none;
+	background: none;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	color: inherit;
+}
+
+.new-pos {
+	@media (max-width: 767px) {
+		&._pos-1 {
+			@include order(1);
+		}
+
+		&._pos-2 {
+			@include order(2);
+		}
+
+		&._pos-3 {
+			@include order(3);
+		}
+
+		&._pos-4 {
+			@include order(4);
+			padding: 0 !important;
+		}
+
+		&._pos-5 {
+			@include order(5);
+		}
+
+		&._pos-6 {
+			@include order(6);
+		}
+	}
+}
+
+h1,
+.new-h1 {
+	font-size: 2.37rem;
+	font-weight: bold;
+	padding: 0;
+	margin: 0 0 30px;
+	line-height: 125%;
+
+	@media (max-width: 991px) {
+		font-size: 2rem;
+	}
+
+	@media (max-width: 767px) {
+		font-size: 1.8rem;
+	}
+}
+
+.main {
+	padding-bottom: 100px;
+
+	@media (max-width: 991px) {
+		padding-bottom: 60px;
+	}
+
+	@media (max-width: 767px) {
+		padding-top: 20px;
+		padding-bottom: 48px;
+	}
+}

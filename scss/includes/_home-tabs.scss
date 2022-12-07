@@ -1,0 +1,148 @@
+.new-home-tabs {
+	font-size: .9rem;
+
+	&__buttons {
+		@include flex;
+		@include align-items(center);
+		margin-bottom: 26px;
+
+		@media (max-width: 1199px) {
+			margin-bottom: 16px;
+		}
+
+		@media (max-width: 991px) {
+			@include justify-content(space-between);
+		}
+
+		&::-webkit-input-placeholder {
+			width: 0;
+			height: 0;
+		}
+	}
+
+	&__button {
+		@include border-radius(20px);
+		height: 34px;
+		//border: 1px solid $color_red;
+		border: 1px solid $color_darkGray;
+		//color: $color_red;
+		color: $color_lightBlack;
+		margin-right: 10px;
+		padding: 0 15px;
+
+		@media (max-width: 1199px) {
+			height: 30px;
+		}
+
+		@media (max-width: 1199px) {
+			font-size: .9rem;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&:hover {
+			background: $color_gray;
+		}
+
+		&._active {
+			background: $color_red;
+			color: $color_white;
+		}
+	}
+
+	&__content {
+		display: none;
+		padding: 0 60px;
+		position: relative;
+
+		&._active {
+			display: block;
+		}
+	}
+
+	&__carousel,
+	&__slide {
+		@include flex;
+	}
+
+	&__item {
+		@include flex;
+		@include flex-direction(column);
+		@include border-radius(4px);
+		@include justify-content(space-between);
+		@include transition($transition);
+		border: 1px solid transparent;
+		padding: 12px;
+		font-weight: 700;
+		height: 100%;
+
+		&:hover {
+			border: 1px solid $color_darkGray;
+		}
+
+		&._no-border {
+			border: 0;
+		}
+	}
+
+	&__col-virtual {
+		@include flex;
+		@include flex-direction(column);
+	}
+
+	&__img {
+		@include flex;
+		@include align-items(center);
+		@include justify-content(center);
+
+		&::before {
+			content: '';
+			padding-top: 92%;
+			float: left;
+		}
+
+		& img {
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&__title {
+		font-size: .87rem;
+		color: inherit;
+		text-decoration: none;
+
+		&:hover {
+			color: $color_red;
+		}
+	}
+
+	&__controls {
+		@include flex;
+		@include align-items(center);
+		@include justify-content(space-between);
+		margin-top: 10px;
+
+		@media (max-width: 1199px) {
+			margin-top: 8px;
+		}
+	}
+
+	&__price {
+		font-size: 1.12rem;
+		color: $color_red;
+	}
+
+	&__all {
+		margin-left: 10px;
+		color: $color_black;
+		text-decoration: none;
+
+		&:hover {
+			color: $color_red;
+		}
+	}
+}

@@ -1,0 +1,151 @@
+.new-mobile-nav {
+	@include transition($transition);
+	position: absolute;
+	top: -100vh;
+	left: 0;
+	right: 0;
+	z-index: 3;
+
+	&._active {
+		top: 100%;
+	}
+
+	&__content {
+		background: $color_white;
+		height: calc(100vh - 106px);
+		overflow-y: auto;
+
+		&::-webkit-scrollbar {
+			width: 0;
+		}
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		@media (max-width: 575px) {
+			margin-left: -10px;
+			margin-right: -10px;
+		}
+
+		&-link {
+			@include flex;
+			@include align-items(center);
+			@include justify-content(space-between);
+			height: 60px;
+			border-bottom: 1px solid $color_gray;
+			color: inherit !important;
+			text-decoration: none;
+			font-size: 1.14rem;
+			padding: 0 8px;
+
+			@media (max-width: 575px) {
+				padding: 0 18px;
+			}
+
+			&._red {
+				border-bottom: 1px solid $color_red;
+				color: $color_red !important;
+			}
+		}
+
+		&-icon {
+			@include flex;
+			@include align-items(center);
+			min-width: 20px;
+			max-width: 20px;
+			margin-right: 19px;
+
+			&._column {
+				@include flex-direction(column);
+				@include justify-content(center);
+			}
+
+			& svg {
+				max-width: 20px;
+			}
+
+			& span {
+				display: block;
+				width: 20px;
+				height: 2px;
+				background: $color_red;
+				margin-bottom: 4px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		& strong {
+			@include flex;
+			@include align-items(center);
+		}
+
+		&-arrow {
+			width: 10px;
+			height: 10px;
+			border-top: 2px solid $color_red;
+			border-right: 2px solid $color_red;
+			@include transform(rotate(45deg));
+		}
+	}
+
+	&__nav {
+		margin: 0;
+		padding: 20px 0 44px;
+		list-style: none;
+
+		& li {
+			margin-bottom: 24px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			& a {
+				font-size: 1.07rem;
+				color: $color_lightBlack !important;
+				text-decoration: none;
+			}
+		}
+	}
+
+	&__bottom {
+		@include flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		margin: 0 -10px;
+		padding: 15px 10px;
+		background: $color_red;
+		color: $color_white;
+
+		&-item {
+			color: inherit !important;
+			text-decoration: none;
+
+			&._big {
+				font-size: 1.42rem;
+				font-weight: bold;
+				margin-bottom: 8px;
+			}
+
+			&._middle {
+				font-size: 1.28rem;
+			}
+
+			&._small {
+				font-size: .92rem;
+			}
+		}
+
+		&-line {
+			padding-bottom: 14px;
+			border-bottom: 1px solid $color_white;
+			margin-bottom: 10px;
+		}
+	}
+}

@@ -1,0 +1,35 @@
+$color_black: #000;
+$color_white: #fff;
+$color_gray: #F3F3F3;
+$color_red: #BB0E00;
+$color_lightBlack: #474747;
+$color_darkGray: #D8D8D8;
+$color_green: #00af17;
+
+$transition: 0.5s ease;
+
+@import "includes/reboot";
+@import "includes/mixin";
+@import "includes/grid";
+@import "includes/fonts";
+@import "includes/default";
+
+@import "includes/header";
+@import "includes/first-screen";
+@import "includes/list-catalog";
+@import "includes/slider";
+@import "includes/home-categories";
+@import "includes/home-tabs";
+@import "includes/carousel";
+@import "includes/mobile-nav";
+@import "includes/section";
+@import "includes/product";
+@import "includes/services";
+@import "includes/popular";
+@import "includes/manufacturers";
+@import "includes/footer";
+@import "includes/breadcrumbs";
+@import "includes/catalog";
+@import "includes/filter";
+@import "includes/sorting";
+@import "includes/pagination";

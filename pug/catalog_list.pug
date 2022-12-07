@@ -1,0 +1,16 @@
+doctype html
+html(lang="ru")
+    head
+        - var seo = {title: 'Страница каталога', description: 'Описание страницы каталога', keywords: 'Ключи страницы каталога'}
+        include includes/_meta.pug
+    body
+        include includes/_header.pug
+
+        include includes/_breadcrumbs.pug
+
+        main.main
+            include includes/_catalog-list.pug
+
+        include includes/_footer.pug
+
+        include includes/_scripts.pug

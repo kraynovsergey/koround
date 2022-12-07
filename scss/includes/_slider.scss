@@ -1,0 +1,45 @@
+.new-slider {
+	position: relative;
+
+	&__item {
+		& img {
+			@include border-radius(4px);
+			width: 100%;
+		}
+	}
+
+	&__dots {
+		@include flex;
+		@include align-items(center);
+		@include justify-content(center);
+		position: absolute;
+		bottom: 20px;
+		width: 100%;
+
+		@media (max-width: 767px) {
+			bottom: 10px;
+		}
+	}
+
+	&__dot {
+		@include border-radius(50%);
+		@include transition($transition);
+		width: 10px;
+		height: 10px;
+		border: 2px solid $color_red;
+		background: $color_white;
+		margin: 0 5px;
+
+		@media (max-width: 767px) {
+			width: 4px;
+			height: 4px;
+			margin: 0 2px;
+			border: 1px solid $color_red;
+		}
+
+		&.tns-nav-active,
+		&:hover {
+			background: $color_red;
+		}
+	}
+}
